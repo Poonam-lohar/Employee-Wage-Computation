@@ -7,27 +7,25 @@ public class EmployeeWage {
         System.out.println("Welcome to employee wage computation. ");
 
         int wagePerHour = 20;
-        int fullDayHour = 8;
         int fullTimeHour = 8;
         int partTimeHour = 4;
         int dailyWage = 0;
 
-        int employeeCheck = (int) (Math.random() * 10) % 2;
-        if (employeeCheck == 1) {
-            dailyWage = fullDayHour * wagePerHour;
-            System.out.println("Employee is present");
-            employeeCheck = (int) (Math.random() * ((2 + 0) + 1));
+        int employeeCheck = (int) (Math.random() * ((2 + 0) + 1));
 
-            if (employeeCheck == 2) {
+        switch (employeeCheck) {
+            case 2:
                 dailyWage = fullTimeHour * wagePerHour;
                 System.out.println("Employee is present full time");
-            } else if (employeeCheck == 1) {
+                break;
+            case 1:
                 dailyWage = partTimeHour * wagePerHour;
                 System.out.println("Employee is present half time");
-            }
-        } else {
-            System.out.println("Employee is absent");
+                break;
+            default:
+                System.out.println("Employee is absent");
         }
+
         System.out.println("Employee total wage is: " + dailyWage);
     }
 }
